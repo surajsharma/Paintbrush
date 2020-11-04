@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- menu_bar -->
+      <div class="button-box menu-bar">
+        <button type="button" class="btn" name="button" onclick="toggle_popup(true);">New</button>
+        <button type="button" class="btn disabled" name="button" id="save-btn">Save</button>
+      </div>
+
+      <!-- popup -->
+      <div class="button-box popup" id="popup">
+        <input class="popup-inpt" type="number" name="" value="" placeholder="Height" id="y_val">
+        <input class="popup-inpt" type="number" name="" value="" placeholder="Width" id="x_val">
+        <button type="button" class="btn" name="button" onclick="create_canvas(); toggle_popup(false);">Create</button>
+        <button type="button" class="btn" name="button" onclick="toggle_popup(false);">Cancel</button>
+      </div>
+
+      <!-- toolbar -->
+      <div class="button-box toolbar">
+        <button type="button" class="btn tool-btn disabled" name="button" id="undo-btn">Undo</button><br>
+        <button type="button" class="btn tool-btn disabled" name="button" id="redo-btn" onclick="redo();">Redo</button><br>
+        <button type="button" class="btn tool-btn brush" name="button" id="rect" onclick="change_brush(this);">Rectangle</button><br>
+        <button type="button" class="btn tool-btn brush" name="button" id="line" onclick="change_brush(this);">Line</button><br>
+        <button type="button" class="btn tool-btn brush" name="button" id="pen" onclick="change_brush(this);">Pen</button><br>
+      </div>
+
+      <!-- drawing_area -->
+      <div class="drawing-container">
+        <div class="canvas-container" id="canvas-container">
+          <canvas id="canvas">Browser does not support canvas.</canvas>
+          <!-- <div class="temp_rect_box" id="temp_rect_box"></div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
